@@ -15,8 +15,7 @@ jobs:
       run: mvn versions:set -DnewVersion=1.0.${{github.run_number}}
 
   build:
-  - name: Create docker image
-    run:
+    runs:
       using: 'docker'
       image: 'Dockerfile'
       args:
