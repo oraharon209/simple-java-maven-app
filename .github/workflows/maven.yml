@@ -20,11 +20,11 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build
+    - name: Build and push
       uses: docker/build-push-action@v5
       with:
         context: .
         file: ./Dockerfile
         build-args: VERSION=${{github.run_number}}
         push: true
-        tag: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:${{github.run_number}} , ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:latest
+        tag: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:${{github.run_number}}
