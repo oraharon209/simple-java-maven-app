@@ -4,21 +4,21 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  clone:
     runs-on: ubuntu-latest
     steps:
+
     - name: Clone repo
       uses: actions/checkout@v4
 
-    - name: Set up java
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        architecture: x64
-
     - name: Increase version
       run: mvn versions:set -DnewVersion=1.0.${{github.run_number}}
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+
+  build:
+  - name: Create docker image
+    runs:
+      using: 'docker'
+      image: 'Dockerfile'
+      args:
+      - VERSION=${{github.run_number}}
 
