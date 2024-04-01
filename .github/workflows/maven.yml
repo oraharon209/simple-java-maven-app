@@ -18,12 +18,7 @@ jobs:
         architecture: x64
 
     - name: Increase version
-      uses: 'mickem/gh-action-bump-maven-version@v1.0.0'
-      with:
-        pom-file:  'pom.xml'
-        version-path: /home/or/actions_github_project/simple-java-maven-app
-        bump-command: mvn org.codehaus.mojo:versions-maven-plugin:2.7:set-property -Dproperty=revision -DnewVersion=@NEW_VERSION@
-
+      run: mvn versions:set -DnewVersion=1.0.${{github.run_number}}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
