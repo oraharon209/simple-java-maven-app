@@ -21,6 +21,7 @@ jobs:
       uses: 'mickem/gh-action-bump-maven-version@v1.0.0'
       with:
         pom-file:  'pom.xml'
+        version-path: /home/or/actions_github_project/simple-java-maven-app
         bump-command: mvn org.codehaus.mojo:versions-maven-plugin:2.7:set-property -Dproperty=revision -DnewVersion=@NEW_VERSION@
 
     - name: Build with Maven
