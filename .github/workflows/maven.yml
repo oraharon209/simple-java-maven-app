@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-java@v4
 
     - name: Increase version
-      uses: 'mickem/gh-action-bump-maven-version'
+      uses: 'mickem/gh-action-bump-maven-version@v1.0.0'
       with:
         pom-file:  'pom.xml'
 
