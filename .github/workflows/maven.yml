@@ -12,6 +12,10 @@ jobs:
 
     - name: Set up java
       uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        architecture: x64
 
     - name: Increase version
       uses: 'mickem/gh-action-bump-maven-version@v1.0.0'
