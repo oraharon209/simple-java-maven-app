@@ -27,4 +27,4 @@ jobs:
         file: ./Dockerfile
         build-args: VERSION=${{github.run_number}}
         push: true
-        tag: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:${{github.run_number}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:${{github.run_number}} , ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:latest
