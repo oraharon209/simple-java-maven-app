@@ -31,5 +31,4 @@ jobs:
         build-args: VERSION=${{github.run_number}}
         push: true
         tag: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:${{github.run_number}}
-        push: true
         tag: ${{ secrets.DOCKERHUB_USERNAME }}/maven_project:latest
