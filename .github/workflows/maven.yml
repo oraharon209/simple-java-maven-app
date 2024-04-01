@@ -16,7 +16,7 @@ jobs:
 
   build:
   - name: Create docker image
-    runs:
+    run:
       using: 'docker'
       image: 'Dockerfile'
       args:
