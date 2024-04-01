@@ -5,6 +5,7 @@ on:
 
 jobs:
   delivery:
+    name: Delivery
     runs-on: ubuntu-latest
     steps:
 
@@ -31,6 +32,7 @@ jobs:
 
 
   deployment:
+    needs: delivery
     name: Deploy
     runs-on: ubuntu-latest
     defaults:
